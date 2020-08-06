@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+
+
+    <!--        <button wx:if="{{isUserExist == 2}}" class="regbtn button1 bc3 reset-btn cf ac f15" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo1"> 授权 </button>-->
+
+    <view wx:if="{{isUserExist == 2}}">
+
+        <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{true}}">
+
+            <view class="modalDlg" >
+                <image src="/static/ba.png"></image>
+                <h1>欢迎光临深财管理会计</h1>
+                <text class="text">专业企业财税培训服务一站式平台 </text>
+                <button class="regbtn button1 bc3 reset-btn cf ac f15 ok" open-type="getPhoneNumber" getphontnumber="getPhoneNumber"> 微信授权 </button>
+            </view>
+
+
+
+        </view>
+    </view>
+
+
+    <view  class="btn-area">
+        <view id="item-title"><h1>请选择证书</h1></view>
+        <view id="item" wx:for="{{categroyInfo}}" wx:for-item="item" class="">
+            <navigator url="/pages/bobby/list?id={{item.Id}}">
+                <image tyle="width: 200px; height: 200px;" src="/static/{{item.Img}}"></image>
+                <view class="perm-title">{{item.Name}}</view>
+            </navigator>
+        </view>
+    </view>
+
+
+</view>

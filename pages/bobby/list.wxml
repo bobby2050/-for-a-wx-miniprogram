@@ -1,0 +1,4 @@
+<view class="page-body">
+    <web-view src="{{host}}page?avatarUrl={{userInfo.avatarUrl}}&nickName={{userInfo.nickName}}&userId={{userId}}&category={{category}}"></web-view>
+   
+ </view>

@@ -1,0 +1,17 @@
+{
+  "pages":[
+
+    "pages/index/index",
+    "pages/bobby/list",
+    "pages/index/guide"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3f8eea",
+    "navigationBarTitleText": "财务",
+    "navigationBarTextStyle": "white"
+   
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
