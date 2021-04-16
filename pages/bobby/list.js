@@ -8,7 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        userId: wx.getStorageSync('userId'),
+        userId: null,
         category: null,
         userInfo: null,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -21,14 +21,17 @@ Page({
     onLoad: function (options) {
         console.log(options)
 
-        // var  userInfo = wx.getStorageSync('userInfo');
+        var  userInfo = wx.getStorageSync('userInfo');
 
-        // console.log(userInfo)
+        console.log(userInfo)
 
+        var userId = wx.getStorageSync('userId')
 
         // 当前id传到下个页面中
         this.setData({
-            category: options.id
+            category: options.id,
+            userInfo: userInfo,
+            userId: userId
         })
 
 

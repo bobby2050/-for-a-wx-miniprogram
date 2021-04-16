@@ -1,6 +1,19 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container2">
+    <view class="avatar-box">
+        <image class="avatar" src="{{avatarUrl}}" />
+    </view>
+    <view wx:if="{{isAuth == 1}}">
+        <view bindtap="popEvent" class="top2-font-nickname"  > 点击我授权 </view>    
+    </view>
 
+    <view wx:else> 
+        <view class="top2-font-nickname"  > {{nickName}} </view>
+    </view>
+    
+            <!-- <view class="top2-font top2-font-number" id="mobile-num"></view> -->
+     
+    
 
     <!--        <button wx:if="{{isUserExist == 2}}" class="regbtn button1 bc3 reset-btn cf ac f15" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo1"> 授权 </button>-->
 
@@ -12,24 +25,37 @@
                 <image src="/static/ba.png"></image>
                 <h1>欢迎光临深财管理会计</h1>
                 <text class="text">专业企业财税培训服务一站式平台 </text>
-                <button class="regbtn button1 bc3 reset-btn cf ac f15 ok" open-type="getPhoneNumber" getphontnumber="getPhoneNumber"> 微信授权 </button>
+                <button wx:if="{{canIUse}}" open-type="getUserInfo" class="regbtn button1 bc3 reset-btn cf ac f15 ok" bindgetuserinfo="bindGetUserInfo">授权登录</button>
             </view>
-
-
-
         </view>
     </view>
 
-
-    <view  class="btn-area">
-        <view id="item-title"><h1>请选择证书</h1></view>
-        <view id="item" wx:for="{{categroyInfo}}" wx:for-item="item" class="">
-            <navigator url="/pages/bobby/list?id={{item.Id}}">
-                <image tyle="width: 200px; height: 200px;" src="/static/{{item.Img}}"></image>
-                <view class="perm-title">{{item.Name}}</view>
-            </navigator>
+    <view wx:if="{{isAuth == 2}}">
+        <view  class="btn-area">
+            <view id="item-title"><h1>请选择证书</h1></view>
+            <view class="item" wx:for="{{categroyInfo}}" wx:for-item="item" >
+                  
+                <view wx:if="{{item.IsAuth == 1}}">
+                    <navigator url="/pages/bobby/list?id={{item.Id}}">
+                    <image class="item-img" src="/static/{{item.Img}}"></image>
+                    <view class="perm-title">
+                        {{item.Name}}
+                    </view>
+                    </navigator>
+                </view>
+                <view wx:else> 
+                    <navigator url="/pages/bobby/list?id={{item.Id}}">
+                    <image class="item-img" src="/static/{{item.Img}}"></image>
+                    <view class="perm-title">
+                        {{item.Name}}
+                    </view>
+                    </navigator>
+                </view>      
+            </view>
         </view>
     </view>
 
+    <view wx:else> 
+    </view>
 
 </view>

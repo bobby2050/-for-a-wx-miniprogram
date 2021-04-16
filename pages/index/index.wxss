@@ -1,4 +1,31 @@
 /**index.wxss**/
+.container2{
+  background:#3f8eea url(https://cw.bestjan.com/static/img/top.png) bottom no-repeat;
+  background-size: contain;
+  height: 380rpx; 
+  width: 100%;
+  float: left;
+}
+.avatar-box{
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  float: left;
+}
+.avatar {
+  /* margin-left: -100rpx; */
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 90rpx;
+  border: #fff 8rpx solid;
+}
+.top2-font-nickname{
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 50rpx;
+  font-size: 30rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -19,14 +46,42 @@
 .usermotto {
   margin-top: 200px;
 }
-#item{
+
+.btn-area{
+  float: left;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.item{
+  padding-left: 30rpx;
   padding-bottom: 40rpx;
+  float: left;
 }
 #item-title{
+  font-size: 30rpx;
   text-align: center;
+  margin-top: 30rpx;
+  margin-bottom: 50rpx;
 }
+
+#item-title h1{
+  font-size: 30rpx;
+   
+}
+
+
 .perm-title{
   text-align: center;
+}
+.perm-title2{
+  text-align: center;
+  color: red;
+}
+.item-img{
+  width: 320rpx;
+  height: 320rpx;
+  border-radius: 15rpx;
 }
 
 
@@ -53,9 +108,9 @@ button::after {
   position:fixed;
   top:0;
   left:0;
-  background: hotpink;
+  background: #666;
   z-index:9000;
-  opacity:0.5;
+  /*opacity:0.3;*/
 }
 
 /* 弹出层 */
@@ -72,6 +127,7 @@ button::after {
   display: flex;
   flex-direction: column;
   align-items:center;
+
 }
 /* 弹出层里面的文字 */
 .text{
